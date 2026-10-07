@@ -208,6 +208,26 @@ footer .tip{display:block;margin-top:6px;font:500 12.5px/1.4 var(--mono);opacity
 .is-placeholder blockquote{color:var(--muted);font-style:italic;font-weight:500}
 .ph-tag{position:absolute;right:14px;top:12px;font:600 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--bg);padding:5px 7px;border-radius:5px}
 
+/* talks */
+.talk{margin-bottom:16px}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+@media (max-width:640px){.parts{grid-template-columns:1fr}}
+.part{display:grid;gap:8px;text-decoration:none;color:inherit}
+.screen{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 75% 30%,rgba(255,204,46,.35) 0 18%,transparent 19%),radial-gradient(circle at 75% 30%,transparent 0 30%,rgba(255,255,255,.18) 31% 32%,transparent 33%),linear-gradient(150deg,#3a4ff5,#1a2bb8);border:1.5px solid var(--line);transition:transform .2s}
+.part:hover .screen{transform:translateY(-3px)}
+.play{width:52px;height:52px;border-radius:50%;background:var(--sun);color:#1a1500;display:grid;place-items:center;box-shadow:3px 3px 0 #10121c;transition:transform .2s}
+.play svg{width:24px;height:24px;margin-left:3px}
+.part:hover .play{transform:scale(1.12)}
+.pn{position:absolute;left:10px;bottom:8px;font:700 13px/1 var(--mono);color:#fff;background:rgba(0,0,0,.35);padding:5px 8px;border-radius:6px}
+.pl{font-weight:700;color:var(--cobalt);font-size:14.5px}
+
+/* writing */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.post{text-decoration:none;color:inherit;transition:border-color .15s}
+.post:hover{border-color:var(--cobalt)}
+.post h3{font-size:1.3rem}
+.read{font-weight:700;color:var(--cobalt);margin-top:4px}
+
 /* race riders */
 .rider{position:absolute;top:50%;right:-16px;width:30px;height:30px;transform:translateY(-50%);pointer-events:none}
 .rider svg{width:100%;height:100%;display:block}
@@ -257,6 +277,7 @@ footer .tip{display:block;margin-top:6px;font:500 12.5px/1.4 var(--mono);opacity
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#writing">Talks &amp; Writing</a>
       <a href="#skills">Skills</a>
     </nav>
     <button class="toggle" id="themeToggle" type="button" aria-label="Switch dark or light theme">
@@ -294,7 +315,7 @@ footer .tip{display:block;margin-top:6px;font:500 12.5px/1.4 var(--mono);opacity
      <div class="photo" id="photo">
        <img src="photo.jpg" alt="Aayush Gupta" width="420" height="420">
      </div>
-     <figcaption class="sticker">that's me! · Aayush</figcaption>
+     <figcaption class="sticker">That's me, Aayush!</figcaption>
    </figure>
   </div>
 </section>
@@ -391,7 +412,7 @@ footer .tip{display:block;margin-top:6px;font:500 12.5px/1.4 var(--mono);opacity
           <h3>Bowsensei</h3>
           <p>An archery coach that looks at an archer's form and gives feedback. Got recognised by a Google engineer.</p>
           <div class="foot"><span class="meta" id="score">Click the target to shoot</span>
-            <a class="gh" href="https://github.com/San1357" target="_blank" rel="noopener">GitHub</a></div>
+            <a class="gh" href="https://dev.to/san1357/bowsensei-an-ai-powered-archery-coach-37m9" target="_blank" rel="noopener">Read</a></div>
         </div>
       </article>
 
@@ -448,6 +469,48 @@ T = <span class="f">kinetic_energy</span>(basis)
         <div class="org">Social Winter of Code</div>
         <ul><li>Fixes and features for Smart Resume Reviewer and an AgriTech project.</li></ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="writing">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Talks &amp; Writing</h2>
+      <p>Explaining the work matters as much as doing it.</p>
+    </div>
+    <article class="card talk">
+      <div class="meta">Google Summer of Code · Sep 2026</div>
+      <h3>GSoC 2026 Contributor Lightning Talk</h3>
+      <p class="muted">My lightning talk on bringing libcint into GBasis: why the old ctypes path was slow, how the C extension works, and what it took to ship it on every OS. Recorded in three parts.</p>
+      <div class="parts">
+          <a class="part" href="https://youtu.be/jGQWRM-OS7I" target="_blank" rel="noopener" aria-label="Watch lightning talk Part 1 on YouTube">
+            <span class="screen"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="pn">Part 1</span></span>
+            <span class="pl">Watch Part 1 →</span>
+          </a>
+          <a class="part" href="https://youtu.be/ykUuYFxKhdI" target="_blank" rel="noopener" aria-label="Watch lightning talk Part 2 on YouTube">
+            <span class="screen"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="pn">Part 2</span></span>
+            <span class="pl">Watch Part 2 →</span>
+          </a>
+          <a class="part" href="https://youtu.be/uU7ZL0ezN5E" target="_blank" rel="noopener" aria-label="Watch lightning talk Part 3 on YouTube">
+            <span class="screen"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="pn">Part 3</span></span>
+            <span class="pl">Watch Part 3 →</span>
+          </a>
+      </div>
+    </article>
+    <div class="posts">
+      <a class="card post" href="https://gist.github.com/San1357/88f0ff6c9c26382c55f2892eb9333228" target="_blank" rel="noopener">
+        <div class="meta">GitHub Gist · Aug 2026</div>
+        <h3>GSoC 2026 Final Report: Integrating libcint into GBasis</h3>
+        <p class="muted">The full story of the project: pip-installable cross-platform builds, the C extension, and where the speedups came from.</p>
+        <span class="read">Read the report →</span>
+      </a>
+      <a class="card post" href="https://dev.to/san1357/bowsensei-an-ai-powered-archery-coach-37m9" target="_blank" rel="noopener">
+        <div class="meta">DEV · Dec 2025</div>
+        <h3>BowSensei: An AI-Powered Archery Coach</h3>
+        <p class="muted">How three Gemini agents (intake, coach and planner) turn a photo or video of my shot into drills and a 7-day training plan.</p>
+        <span class="read">Read on DEV →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -531,7 +594,7 @@ T = <span class="f">kinetic_energy</span>(basis)
   var links=[].slice.call(document.querySelectorAll('.links a'));
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
-    ['home','education','projects','experience','skills'].forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el)});
+    ['home','education','projects','experience','writing','skills'].forEach(function(id){var el=document.getElementById(id); if(el) io.observe(el)});
   }
 
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -608,6 +671,7 @@ T = <span class="f">kinetic_energy</span>(basis)
     education:"Maths + CS. The maths is why my orbit is elliptical.",
     projects:"Press 'Race them'. Python is my slow cousin. Then go shoot some arrows.",
     experience:"GSoC with QC-Devs. 1,146 tests! I was in a few of them.",
+    writing:"He gave a lightning talk at GSoC! Three parts. I watched all of them. Twice.",
     skills:"Python and C. He speaks both. I mostly speak C.",
     contact:"Email him. I'll deliver it at the speed of light. Almost."
   }, seen={};
