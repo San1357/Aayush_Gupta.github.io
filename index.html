@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Aayush Gupta — scientific software, GSoC 2026 contributor with QC-Devs, B.Sc. Mathematics & Computer Science at CSJM University.">
+<title>Aayush Gupta Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap">
+<style>
+/* Layout: one content tree, three skins. A switcher bar picks the skin; each skin is its own committed look. */
+:root{
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --display:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;
+  --bg:#f6f8fb;--fg:#17202c;--muted:#5a6676;--accent:#1d4f8c;--line:#d9e0ea;--chip:#e8eef6;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11161d;--fg:#e4e9f0;--muted:#97a3b3;--accent:#7fb0ec;--line:#26303c;--chip:#1b2430;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11161d;--fg:#e4e9f0;--muted:#97a3b3;--accent:#7fb0ec;--line:#26303c;--chip:#1b2430;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- switcher ---------- */
+.switch{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px 16px;background:#14171c;color:#cfd6df;font:500 13px/1.2 var(--sans);border-bottom:1px solid #2a2f37}
+.switch span{opacity:.7;margin-right:4px}
+.switch button{font:inherit;cursor:pointer;border:1px solid #3a414c;background:transparent;color:#cfd6df;padding:7px 14px;border-radius:999px}
+.switch button[aria-pressed="true"]{background:#f2f4f7;color:#14171c;border-color:#f2f4f7}
+
+/* ---------- shared structure ---------- */
+.page{padding-inline:16px;padding-block:48px 72px}
+.wrap{max-width:860px;margin:0 auto;display:grid;gap:56px}
+.hero{display:grid;gap:14px}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0;max-width:65ch}
+.lede{font-size:1.15rem}
+.links{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.95rem}
+.links a{text-decoration:none}
+.email{user-select:all}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.stat b{display:block;font-variant-numeric:tabular-nums}
+section{display:grid;gap:20px}
+.projects{display:grid;gap:28px}
+.proj{display:grid;gap:10px;min-width:0}
+.proj-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline}
+.meta{font:500 12.5px/1.4 var(--mono)}
+.proj ul{margin:0;padding-left:1.1em;display:grid;gap:4px;max-width:68ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:500 12px/1 var(--mono);padding:5px 8px}
+.timeline{display:grid;gap:14px}
+.tl{display:grid;grid-template-columns:110px 1fr;gap:16px}
+.tl .when{font:500 13px/1.6 var(--mono);font-variant-numeric:tabular-nums}
+@media (max-width:520px){.tl{grid-template-columns:1fr;gap:2px}}
+footer{font-size:.9rem}
+
+/* ================= 1. RESEARCH MINIMAL ================= */
+[data-style="research"]{background:var(--bg);color:var(--fg)}
+[data-style="research"] .wrap{max-width:720px}
+[data-style="research"] h1{font:700 clamp(2rem,5vw,2.7rem)/1.15 var(--serif);letter-spacing:-.01em}
+[data-style="research"] h2{font:600 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line)}
+[data-style="research"] h3{font:600 1.2rem/1.3 var(--serif)}
+[data-style="research"] p,[data-style="research"] li{font-family:var(--serif);font-size:1.05rem}
+[data-style="research"] .eyebrow,[data-style="research"] .meta{color:var(--muted)}
+[data-style="research"] .links a{color:var(--accent);border-bottom:1px solid var(--line)}
+[data-style="research"] .links a:hover{border-color:var(--accent)}
+[data-style="research"] .stat b{font:600 1.6rem/1.1 var(--serif);color:var(--accent)}
+[data-style="research"] .stat{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+[data-style="research"] .tag{background:var(--chip);color:var(--muted);border-radius:3px}
+[data-style="research"] .proj + .proj{border-top:1px dashed var(--line);padding-top:26px}
+[data-style="research"] .eq{font-family:var(--serif);font-style:italic;color:var(--accent)}
+[data-style="research"] footer{color:var(--muted)}
+
+/* ================= 2. DEV / TERMINAL (dark by choice) ================= */
+[data-style="terminal"]{background:#0b0f0e;color:#c9d4cf;font-family:var(--mono);font-size:14px;color-scheme:dark}
+[data-style="terminal"] .wrap{max-width:900px;border:1px solid #23302b;border-radius:8px;padding:0 0 36px;gap:40px;background:#0f1513;overflow:hidden}
+[data-style="terminal"] .wrap::before{content:"● ● ●   aayush@gorakhpur: ~/portfolio";display:block;padding:10px 16px;background:#18211e;color:#6f8a80;font-size:12px;border-bottom:1px solid #23302b}
+[data-style="terminal"] .hero,[data-style="terminal"] section,[data-style="terminal"] footer{padding-inline:clamp(16px,4vw,32px)}
+[data-style="terminal"] p,[data-style="terminal"] li{font-family:var(--mono);font-size:14px}
+[data-style="terminal"] h1{font:700 clamp(1.6rem,4.5vw,2.3rem)/1.2 var(--mono);color:#f2f5f3}
+[data-style="terminal"] h1::after{content:"▋";color:#5fd3c4;margin-left:6px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+[data-style="terminal"] .eyebrow{color:#5fd3c4;text-transform:none;letter-spacing:0}
+[data-style="terminal"] .eyebrow::before{content:"$ whoami → "}
+[data-style="terminal"] h2{font:600 14px/1.4 var(--mono);color:#5fd3c4}
+[data-style="terminal"] h2::before{content:"$ cat " attr(data-file)}
+[data-style="terminal"] h2 .label{display:none}
+[data-style="terminal"] h3{font:700 15px/1.4 var(--mono);color:#f2b45a}
+[data-style="terminal"] h3::before{content:"## "}
+[data-style="terminal"] .meta{color:#6f8a80}
+[data-style="terminal"] .lede{font-size:14.5px;color:#a9b8b1}
+[data-style="terminal"] .links a{color:#8fd0ff;text-decoration:underline;text-underline-offset:3px}
+[data-style="terminal"] .links a::before{content:"→ "}
+[data-style="terminal"] .email{color:#8fd0ff}
+[data-style="terminal"] .stats{gap:10px}
+[data-style="terminal"] .stat{border:1px solid #23302b;padding:10px 12px;font-size:12px;color:#6f8a80}
+[data-style="terminal"] .stat b{color:#f2b45a;font-size:1.4rem}
+[data-style="terminal"] .proj ul{list-style:none;padding-left:0}
+[data-style="terminal"] .proj li::before{content:"- ";color:#5fd3c4}
+[data-style="terminal"] .tag{border:1px solid #2c3b36;color:#9fb3ab}
+[data-style="terminal"] .tag::before{content:"#"}
+[data-style="terminal"] .eq{color:#f2b45a}
+[data-style="terminal"] .tl .when{color:#f2b45a}
+[data-style="terminal"] footer{color:#6f8a80}
+[data-style="terminal"] footer::before{content:"$ exit 0";display:block;color:#5fd3c4;margin-bottom:6px}
+
+/* ================= 3. BOLD MODERN (single look by choice) ================= */
+[data-style="bold"]{background:#fffdf7;color:#121212;font-family:var(--sans);padding-block:0 72px;color-scheme:light}
+[data-style="bold"] .wrap{max-width:1000px;gap:64px}
+[data-style="bold"] .hero{background:#1f3cf0;color:#fff;margin-inline:-16px;padding:56px clamp(20px,5vw,48px) 48px;position:relative;overflow:hidden;gap:18px}
+@media (min-width:1032px){[data-style="bold"] .hero{margin-inline:0;border-radius:0 0 28px 28px}}
+[data-style="bold"] .hero::after{content:"";position:absolute;right:-60px;top:-40px;width:260px;height:260px;border-radius:50%;border:34px solid #ffd23f;opacity:.95}
+[data-style="bold"] .hero > *{position:relative;z-index:1}
+[data-style="bold"] .eyebrow{color:#ffd23f;font-family:var(--mono)}
+[data-style="bold"] h1{font:800 clamp(2.6rem,9vw,5.2rem)/.95 var(--display);letter-spacing:-.03em;max-width:12ch}
+[data-style="bold"] .lede{font-size:1.2rem;color:#e6eaff}
+[data-style="bold"] .links a{background:#fff;color:#1f3cf0;padding:8px 14px;border-radius:999px;font-weight:600;transition:transform .15s}
+[data-style="bold"] .links a:hover{transform:translateY(-2px)}
+[data-style="bold"] .email{background:#ffd23f;color:#121212;padding:8px 14px;border-radius:999px;font-weight:600}
+[data-style="bold"] .stats{gap:12px}
+[data-style="bold"] .stat{background:#121212;color:#bfbfbf;padding:18px;border-radius:16px;font-size:.88rem}
+[data-style="bold"] .stat:nth-child(2){background:#ffd23f;color:#3a3200}
+[data-style="bold"] .stat b{font:800 2.4rem/1 var(--display);color:#fff;margin-bottom:6px}
+[data-style="bold"] .stat:nth-child(2) b{color:#121212}
+[data-style="bold"] h2{font:800 clamp(1.8rem,5vw,2.8rem)/1 var(--display);letter-spacing:-.02em}
+[data-style="bold"] h3{font:800 1.5rem/1.15 var(--display)}
+[data-style="bold"] .projects{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+[data-style="bold"] .proj{border:2px solid #121212;border-radius:20px;padding:22px;background:#fff}
+[data-style="bold"] .proj:first-child{grid-column:1/-1;background:#eef1ff;border-color:#1f3cf0}
+[data-style="bold"] .meta{color:#555}
+[data-style="bold"] .tag{background:#121212;color:#fff;border-radius:999px;padding:6px 10px}
+[data-style="bold"] .eq{color:#1f3cf0;font-weight:700}
+[data-style="bold"] .tl{border-left:4px solid #ffd23f;padding-left:14px}
+[data-style="bold"] .tl .when{color:#1f3cf0;font-weight:600}
+[data-style="bold"] footer{color:#555}
+
+
+/* section nav */
+.secnav{display:flex;flex-wrap:wrap;gap:6px 20px;font:500 14px/1.4 var(--sans)}
+.secnav a{text-decoration:none}
+html{scroll-behavior:smooth}
+section,.hero{scroll-margin-top:64px}
+[data-style="research"] .secnav a{color:var(--muted)}
+[data-style="research"] .secnav a:hover{color:var(--accent)}
+[data-style="terminal"] .secnav{font-family:var(--mono);padding-inline:clamp(16px,4vw,32px);font-size:13px}
+[data-style="terminal"] .secnav a{color:#8fd0ff}
+[data-style="terminal"] .secnav a::before{content:"./"; color:#6f8a80}
+[data-style="bold"] .secnav{padding-top:16px;margin-bottom:-40px}
+[data-style="bold"] .secnav a{font-weight:600;color:#121212;border:2px solid #121212;padding:6px 14px;border-radius:999px}
+[data-style="bold"] .secnav a:hover{background:#ffd23f}
+[data-style="bold"] .stat{color:#bfbfbf}
+[data-style="bold"] .hero .stats{margin-top:12px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="switch" aria-label="Portfolio style">
+  <span>Style:</span>
+  <button type="button" id="s-research" data-pick="research">Research minimal</button>
+  <button type="button" id="s-terminal" data-pick="terminal">Dev / terminal</button>
+  <button type="button" id="s-bold" data-pick="bold">Bold modern</button>
+</nav>
+
+<main class="page" id="page" data-style="research">
+<div class="wrap">
+
+  <nav class="secnav" aria-label="Sections">
+    <a href="#home">Home</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#experience">Work Experience</a>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="eyebrow">Mathematics &amp; Computer Science · CSJM University, Kanpur</div>
+    <h1>Aayush Gupta</h1>
+    <p class="lede">I write fast, tested scientific software at the boundary of Python and C. This summer I connected the libcint integral library to GBasis for QC-Devs as a Google Summer of Code 2026 contributor. I'm looking for research-adjacent work in quantum chemistry tooling, scientific computing and agentic AI.</p>
+    <div class="links">
+      <a href="https://github.com/San1357" target="_blank" rel="noopener">github.com/San1357</a>
+      <a href="https://www.linkedin.com/in/aayush-gupta-sde" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="email">sanayush1357@gmail.com</span>
+    </div>
+    <div class="stats" aria-label="Highlights">
+      <div class="stat"><b>353×</b>peak speedup from C integral loops in GBasis</div>
+      <div class="stat"><b>1,146</b>passing tests in GSoC PR #259</div>
+      <div class="stat"><b>9+</b>merged PRs during Winter of Code 5.0</div>
+      <div class="stat"><b>3</b>platforms supported: Linux, macOS, Windows</div>
+    </div>
+  </header>
+
+  <section id="education">
+    <h2 data-file="education.md"><span class="label">Education</span></h2>
+    <div class="projects">
+      <article class="proj">
+        <div class="proj-head">
+          <h3>B.Sc. Mathematics &amp; Computer Science</h3>
+          <span class="meta">Second year · ongoing</span>
+        </div>
+        <p>Chhatrapati Shahu Ji Maharaj University (CSJM), Kanpur</p>
+      </article>
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Cognitive Modelling Winter School</h3>
+          <span class="meta">IIT Mandi · attended twice</span>
+        </div>
+        <p>Winter school on computational models of cognition, led by Prof. Marieke van Vugt.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 data-file="projects.md"><span class="label">Projects</span></h2>
+    <div class="projects">
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Two-electron integral engine</h3>
+          <span class="meta">GBasis · PR #245</span>
+        </div>
+        <p>Electron repulsion integrals <span class="eq">(μν|λσ)</span> for GBasis, implemented with the Obara–Saika and Head-Gordon–Pople recurrence schemes.</p>
+        <div class="tags"><span class="tag">Quantum chemistry</span><span class="tag">Recurrence relations</span><span class="tag">Python</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Bowsensei</h3>
+          <span class="meta">AI archery coach · Google Cloud</span>
+        </div>
+        <p>An AI coaching system that analyses an archer's form and gives feedback, built on Google Cloud Vertex AI. A Google engineer recognised the project.</p>
+        <div class="tags"><span class="tag">Vertex AI</span><span class="tag">Computer vision</span><span class="tag">GCP</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>libcint integrals tutorial</h3>
+          <span class="meta">Jupyter notebook · GBasis docs</span>
+        </div>
+        <p>A step-by-step notebook showing how to compute overlap, kinetic and electron repulsion integrals through the new libcint bindings.</p>
+        <div class="tags"><span class="tag">Jupyter</span><span class="tag">Documentation</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 data-file="experience.md"><span class="label">Work Experience</span></h2>
+    <div class="projects">
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Google Summer of Code Contributor</h3>
+          <span class="meta">QC-Devs · 2026</span>
+        </div>
+        <p>Project: Better Linking Between Libcint and GBasis. Mentored by Michelle Richer, Marco Martínez and Prof. Paul Ayers (McMaster University).</p>
+        <ul>
+          <li>Migrated the GBasis build to scikit-build-core and CMake.</li>
+          <li>Wrote a NumPy C-API bridge (<code>libcint_wrap.c</code>) with token-pasting macros that generate the integral loops.</li>
+          <li>Moved integral evaluation loops into C for 340–353× speedups, backed by 1,146 passing tests.</li>
+          <li>Added cross-platform library loading for Linux, macOS and Windows.</li>
+          <li>Fixed macOS dylib naming, the physicist/chemist ERI index swap, and CINTOpt optimizer integration.</li>
+          <li>Presented progress biweekly; gave the final presentation and a lightning talk.</li>
+        </ul>
+        <div class="tags"><span class="tag">C</span><span class="tag">Python</span><span class="tag">NumPy C-API</span><span class="tag">CMake</span><span class="tag">pytest</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Open Source Contributor</h3>
+          <span class="meta">Winter of Code 5.0 · 2026</span>
+        </div>
+        <p>Contributed to GBasis, including the two-electron integral engine. 9+ pull requests merged.</p>
+      </article>
+
+      <article class="proj">
+        <div class="proj-head">
+          <h3>Open Source Contributor</h3>
+          <span class="meta">Social Winter of Code · 2026</span>
+        </div>
+        <p>Contributions to Smart Resume Reviewer and AgriTech repositories.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>Aayush Gupta · Kanpur, India</footer>
+
+</div>
+</main>
+
+<script>
+(function(){
+  var page=document.getElementById('page');
+  var btns=document.querySelectorAll('[data-pick]');
+  function pick(s){
+    page.setAttribute('data-style',s);
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.pick===s))});
+    try{localStorage.setItem('pf-style',s)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.pick)})});
+  var start='research', h=location.hash.slice(1);
+  if(['research','terminal','bold'].indexOf(h)>-1) start=h;
+  else { try{var v=localStorage.getItem('pf-style'); if(v) start=v}catch(e){} }
+  pick(start);
+})();
+</script>
+
+</body>
+</html>
